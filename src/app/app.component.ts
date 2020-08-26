@@ -20,8 +20,13 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // this.statusBar.styleDefault();
+      // Deixa as fontes da barra de status na cor branca.
+      this.statusBar.styleLightContent();
+      // Elimina a tela branca depois da splashscreen
+      setTimeout(() => {
+        this.splashScreen.hide();
+      }, 1000);
     });
   }
 }
